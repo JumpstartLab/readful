@@ -1,0 +1,9 @@
+<h1>Create a new Reading Poll</h1>
+
+<%= form_for @poll do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :id => 'title' %>
+  <%= f.label :description %>
+  <%= f.text_area :description, :id => 'description' %>
+  <%= f.submit :id => 'submit' %>
+<% end %>

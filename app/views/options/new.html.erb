@@ -1,0 +1,11 @@
+<h1>Add An Option</h1>
+
+<%= form_for [@poll, @option] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :id => 'title' %>
+  <%= f.label :note %>
+  <%= f.text_field :note, :id => 'note' %>
+  <%= f.label :url %>
+  <%= f.text_field :url, :id => 'url' %>
+  <%= f.submit :id => 'submit' %>
+<% end %>

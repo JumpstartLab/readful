@@ -1,4 +1,9 @@
 Bookhub::Application.routes.draw do
+  resources :polls do
+    resources :options
+  end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

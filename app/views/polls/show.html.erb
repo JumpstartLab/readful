@@ -1,0 +1,10 @@
+<h1><%= @poll.title %></h1>
+
+<p><%= @poll.description %></p>
+
+<div id='options'>
+  <%= render @poll.options %>
+</div>
+
+<%= link_to "Add an Option", new_poll_option_path(@poll), :id => 'add_option' %>
+
