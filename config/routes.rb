@@ -1,6 +1,8 @@
 Bookhub::Application.routes.draw do
   resources :polls do
-    resources :options
+    resources :options do
+      resources :votes
+    end
   end
 
 

@@ -1,5 +1,9 @@
-<div class='option' id='<%= dom_id option %>'>
+<div class='option' id='option-<%= option.id %>'>
   <h4 class='title'><%= option.title %></h4>
   <p class='note'><%= option.note %></p>
   <p class='url'><%= option.url %></p>
+  <p class='votes'>
+    Votes: <%= option.vote_count %>
+    <%= button_to "+1", poll_option_votes_path(@poll, option), :id => "plus_one-option_#{option.id}" %>
+  </p>
 </div>
