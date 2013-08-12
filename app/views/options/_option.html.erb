@@ -4,6 +4,10 @@
   <p class='url'><%= option.url %></p>
   <p class='votes'>
     Votes: <%= option.vote_count %>
-    <%= button_to "+1", poll_option_votes_path(@poll, option), :id => "plus_one-option_#{option.id}" %>
+    <% if @poll.open %>
+      <%= button_to "+1", poll_option_votes_path(@poll, option), :id => "plus_one-option_#{option.id}" %>
+    <% else %>
+      Accepted
+    <% end %>
   </p>
 </div>

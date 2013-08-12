@@ -8,3 +8,5 @@
 
 <%= link_to "Add an Option", new_poll_option_path(@poll), :id => 'add_option' %>
 
+<%= button_to "Close Poll", close_poll_path(@poll), :id => 'close_poll', :method => 'put' %>
+

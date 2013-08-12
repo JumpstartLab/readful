@@ -3,6 +3,10 @@ Bookhub::Application.routes.draw do
     resources :options do
       resources :votes
     end
+
+    member do
+      put :close
+    end
   end
 
 

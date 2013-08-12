@@ -19,4 +19,15 @@ describe Poll do
     poll = Poll.new(poll_data)
     expect(poll).to_not be_valid
   end
+
+  it "defaults to open" do
+    poll = Poll.new
+    expect(poll).to be_open
+  end
+
+  it "closes" do
+    poll = Poll.create(data)
+    poll.close
+    expect(poll).to be_closed
+  end
 end

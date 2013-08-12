@@ -7,5 +7,4 @@ describe "Creating a poll" do
     click_link_or_button 'submit'
     expect(Poll.count).to eq 1
   end
-
 end

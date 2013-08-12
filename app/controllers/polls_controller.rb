@@ -13,4 +13,10 @@ class PollsController < ApplicationController
   def show
     @poll = Poll.find(params[:id])
   end
+
+  def close
+    poll = Poll.find(params[:id])
+    poll.close
+    redirect_to poll
+  end
 end
