@@ -7,7 +7,11 @@
     <% if @poll.open %>
       <%= button_to "+1", poll_option_votes_path(@poll, option), :id => "plus_one-option_#{option.id}" %>
     <% else %>
-      Accepted
+      <% if option.accepted? %>
+        <span class='accepted'>Accepted</span>
+      <% else %>
+        <span class='not_accepted'>Not Accepted</span>
+      <% end %>
     <% end %>
   </p>
 </div>

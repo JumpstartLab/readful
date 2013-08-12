@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130812042203) do
+ActiveRecord::Schema.define(:version => 20130812050232) do
 
   create_table "options", :force => true do |t|
     t.string   "title"
     t.text     "note"
     t.integer  "poll_id"
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "accepted",   :default => false
   end
 
   create_table "polls", :force => true do |t|

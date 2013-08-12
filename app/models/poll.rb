@@ -7,6 +7,7 @@ class Poll < ActiveRecord::Base
 
   def close
     self.open = false
+    options.each{|option| option.close }
     self.save
   end
 

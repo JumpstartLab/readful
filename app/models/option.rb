@@ -9,4 +9,9 @@ class Option < ActiveRecord::Base
   def vote_count
     votes.count
   end
+
+  def close
+    self.accepted = (votes.count >= poll.minimum_votes)
+    self.save
+  end
 end
