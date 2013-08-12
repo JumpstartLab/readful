@@ -27,11 +27,11 @@ describe "Closing a poll" do
   end
 
   context "when an option has insufficient votes" do
-    before(:each) do
-      @accepted = poll.options[0..3]
-      @outlier = poll.options[4]
+    let(:accepted){ poll.options[0..3] }
+    let(:outlier){ poll.options[4] }
 
-      @accepted.each do |option|
+    before(:each) do
+      accepted.each do |option|
         3.times{ option.votes.create }
       end
     end
@@ -40,15 +40,15 @@ describe "Closing a poll" do
       visit poll_path(poll)
       click_link_or_button 'close_poll'
       expect(current_path).to eq poll_path(poll)
-      @accepted.each do |option|
+      accepted.each do |option|
         within("#option-#{option.id}") do
           expect(page).to_not have_css("#plus_one-option_#{option.id}")
           expect(page).to have_css(".accepted")
         end
       end
 
-      within("#option-#{@outlier.id}") do
-        expect(page).to_not have_css("#plus_one-option_#{@outlier.id}")
+      within("#option-#{outlier.id}") do
+        expect(page).to_not have_css("#plus_one-option_#{outlier.id}")
         expect(page).to have_css(".not_accepted")
       end
     end
