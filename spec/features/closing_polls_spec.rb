@@ -56,4 +56,18 @@ describe "Closing a poll" do
     end
   end
 
+  describe 'when showing that poll' do
+    before(:each) do
+      poll.close
+      visit poll_path(poll)
+    end
+
+    it "does not display the close poll button" do
+      expect(page).to_not have_css('#close_poll')
+    end
+
+    it "does not display the add option link" do
+      expect(page).to_not have_css('#add_option')
+    end
+  end
 end
