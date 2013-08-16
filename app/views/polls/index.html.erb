@@ -1,3 +1,7 @@
 <div class='polls'>
   <%= render @polls %>
 </div>
+
+<div class='actions'>
+  <%= link_to "Create a Poll", new_poll_path, :id => 'new_poll' %>
+</div>

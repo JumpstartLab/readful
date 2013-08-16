@@ -8,4 +8,10 @@ describe "Creating a poll" do
     click_link_or_button 'submit'
     expect(Poll.count).to eq 1
   end
+
+  it "can reach the form from the index" do
+    visit polls_path
+    click_link_or_button 'new_poll'
+    expect(current_path).to eq new_poll_path
+  end
 end
