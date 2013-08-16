@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem "anjlab-bootstrap-rails", "~> 3.0.0.rc2"
 
 
 # Gems used only for assets and not required

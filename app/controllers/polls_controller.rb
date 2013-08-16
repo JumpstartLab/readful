@@ -1,4 +1,7 @@
 class PollsController < ApplicationController
+  def index
+    @polls = Poll.active
+  end
 
   def new
     @poll = Poll.new

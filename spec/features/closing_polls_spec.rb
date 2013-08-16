@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 describe "Closing a poll" do
   let(:poll_data){ {:title => "Hello Poll", :description => "This is a poll description.", :minimum_votes => 3} }
   let(:poll){ Poll.create(poll_data) }

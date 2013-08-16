@@ -42,4 +42,15 @@ describe Poll do
       expect(option_2).to_not be_accepted
     end
   end
+
+  describe '#active' do
+    it "includes only un-closed polls" do
+      poll = Poll.create(data)
+      inactive = Poll.create data.merge(:title => "Inactive Poll")
+      inactive.close
+      actives = Poll.active
+      expect(actives).to include(poll)
+      expect(actives).to_not include(inactive)
+    end
+  end
 end

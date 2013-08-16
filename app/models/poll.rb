@@ -14,4 +14,8 @@ class Poll < ActiveRecord::Base
   def closed?
     !open
   end
+
+  def self.active
+    where(:open => true)
+  end
 end
