@@ -4,6 +4,11 @@ describe "the listing of polls" do
   let(:poll_data){ {:title => "Hello Poll", :description => "This is a poll description.", :minimum_votes => 3} }
   let!(:poll){ Poll.create(poll_data) }
 
+  it "happens on the root route" do
+    visit root_path
+    expect(page).to have_content(poll.title)
+  end
+
   it "shows active polls" do  
     visit polls_path
     within("#poll_#{poll.id}") do

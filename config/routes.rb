@@ -9,6 +9,8 @@ Bookhub::Application.routes.draw do
     end
   end
 
+  root :to => "polls#index"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
