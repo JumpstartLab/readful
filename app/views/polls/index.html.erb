@@ -1,7 +1,16 @@
+<h2>Active Polls</h2>
+
 <div class='polls'>
-  <%= render @polls %>
+  <% if @polls.any? %>
+    <%= render @polls %>
+  <% else %>
+    No active polls.
+  <% end %>
 </div>
+
+<h2>Actions</h2>
 
 <div class='actions'>
   <%= link_to "Create a Poll", new_poll_path, :id => 'new_poll' %>
 </div>
+

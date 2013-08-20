@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<% if current_user %>
+  <div id='current_user'>
+    <p>Current User: <%= current_user.inspect %></p>
+    <p>Session <%= session.inspect %></p>
+    <%= link_to 'logout', authensive_client.logout_path %>
+  </div>
+<% else %>
+  <%= link_to 'Login with Github', 'http://localhost:4567/login?callback=http://localhost:3000/session/login&return_to=http://localhost:3000/polls/' %>
+<% end %>
+
 <%= yield %>
 
 </body>
